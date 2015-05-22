@@ -14,7 +14,7 @@
     <nav>
       <ul>
         <% if current_user %>
-          <li><%= current_user.email %> | <%= link_to("Log out", logout_path) %></li>
+          <li><%= current_user.nickname %> | <%= link_to("Log out", logout_path) %></li>
         <% else %>
           <li><%= link_to("Log in", "/auth/github") %></li>
         <% end %>
