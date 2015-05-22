@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Wiki</title>
+    <%= stylesheet_link_tag("application", :media => "all") %>
+    <%= javascript_include_tag("application") %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header>
+      <h1><%= link_to("Miki", root_path) %></h1>
+    </header>
+
+    <nav>
+      <ul>
+        <% if current_user %>
+          <li><%= current_user.email %> | <%= link_to("Log out", logout_path) %></li>
+        <% else %>
+          <li><%= link_to("Log in", "/auth/github") %></li>
+        <% end %>
+      </ul>
+    </nav>
+
+    <div id="torso">
+      <%= yield %>
+    </div>
+  </body>
+</html>
+
