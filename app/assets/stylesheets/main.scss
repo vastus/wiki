@@ -1,6 +1,43 @@
 body {
+  color: #333;
   width: 60em;
   margin: 1em auto;
   padding: 1em;
+}
+
+header {
+}
+
+nav {
+  padding: 1em .5em;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: right;
+    font-size: .875em;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  li:last-child {
+  }
+
+  a {
+    color: #666;
+    font-weight: 600;
+    text-decoration: none;
+  }
+}
+
+.header-link {
+  color: #444;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 

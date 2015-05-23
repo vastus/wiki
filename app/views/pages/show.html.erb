@@ -1,0 +1,16 @@
+<section id="pages" class="show-page">
+  <div class="page">
+    <div class="title">
+      <h1 class="page-title"><%= @page.title %>
+    </div>
+
+    <div class="content">
+      <%= raw(md(@page.content)) %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= link_to("Edit", edit_page_path(@page)) %>
+  </div>
+</section>
+

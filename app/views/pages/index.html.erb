@@ -1,4 +1,12 @@
 <section id="pages">
   <h1>Pages</h1>
+
+  <% @pages.each do |page| %>
+    <div class="page">
+      <div class="title">
+        <h2><%= link_to(page.title, page) %></h2>
+      </div>
+    </div>
+  <% end %>
 </section>
 
