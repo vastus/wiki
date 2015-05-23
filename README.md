@@ -1,2 +1,10 @@
-# MIKI &mdash; Motley's Inner Wiki
+# wiki &mdash; a minimalistic wiki
 
+Simple, minimal wiki with focus on code.
+
+## Features
+
+[x] github oauth
+[x] markdown
+[ ] syntax highlighting
+[ ] abilities (cancan)
