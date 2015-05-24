@@ -10,8 +10,8 @@ Simple, minimal wiki with focus on code.
 
   - [x] github oauth
   - [x] markdown
-  - [ ] syntax highlighting
+  - [x] syntax highlighting
   - [ ] abilities (cancan)
   - [ ] preview (new/edit)
-  - [ ] jwt
+  - [ ] jwt
 
