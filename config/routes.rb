@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   # Custom.
   get("/auth/github/callback" => "sessions#create")
   get("/logout" => "sessions#destroy")
+  get("/search" => "search#results")
 end
 
