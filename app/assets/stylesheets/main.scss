@@ -2,7 +2,7 @@ $width: 960px;
 
 body {
   color: #333;
-  width: $width;
+  max-width: $width;
   margin: 1em auto;
   padding: 1em;
 }
@@ -12,7 +12,7 @@ header {
 
 nav {
   padding: 1em .5em;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #ccc;
 
   ul {
     margin: 0;

@@ -1,13 +1,19 @@
 #pages {
+  h1, h2, h3, h4, h5, h6 {
+    color: #444;
+    font-family: georgia, serif;
+  }
+
+  code {
+    padding: .1em .3em;
+    font-family: monospace;
+    background: rgb(245, 245, 245);
+    border: 1px solid rgb(235, 235, 235);
+  }
+
   input,
   textarea {
     margin-bottom: 1em;
-    // border: 1px solid rgb(205, 205, 205);
-    // border-radius: 1px;
-    //
-    // &:focus {
-    //   box-shadow: 0 0 5px rgb(5, 5, 105);
-    // }
   }
 
   .field_with_errors + br {
@@ -42,23 +48,54 @@
 
   .actions input {
     padding: .5em 1.1em;
-    background: rgb(250, 250, 250);
     border: 1px solid #999;
+    background: rgb(250, 250, 250);
   }
 
   .page {
     padding: .5em;
+    line-height: 1.5;
     margin-bottom: 1em;
     border-bottom: 1px solid #eee;
   }
 
+  .page h1,
+  .page h2 {
+    border-bottom: 1px solid rgb(240, 240, 240);
+  }
+
+  .page h3,
+  .page h4,
+  .page h5,
+  .page h6 {
+    color: #343434;
+  }
+
+  .page p {
+    color: #333;
+    line-height: 1.8;
+    font-family: helvetica, sans-serif;
+  }
+
   .highlight {
+    line-height: 1.3;
     padding: .5em 1em;
     font-size: 13px;
     font-family: monospace;
     background: rgb(254, 254, 252);
     border-radius: 2px;
     border: 1px solid rgb(235, 235, 235);
+  }
+}
+
+#pages.index {
+  .page-title a {
+    color: rgb(50, 50, 200);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
