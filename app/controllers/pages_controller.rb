@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   load_and_authorize_resource(:param_method => :page_params)
 
   def index
-    @pages = Page.order("updated_at DESC")
+    @pages = Page.order("updated_at DESC").limit(5)
   end
 
   def show
