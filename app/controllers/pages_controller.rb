@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_action(:set_page, :only => [:show, :edit, :update])
+  load_and_authorize_resource(:param_method => :page_params)
 
   def index
     @pages = Page.order("updated_at DESC")
@@ -34,10 +34,6 @@ class PagesController < ApplicationController
   end
 
   private
-
-  def set_page
-    @page = Page.find(params[:id])
-  end
 
   def page_params
     params.require(:page).permit(:title, :content, :user_id)
