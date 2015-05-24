@@ -1,0 +1,12 @@
+<section id="search" class="results">
+  <h1 class="section-header">Results for &ldquo;<span class="term"><%= params[:q] %></span>&rdquo;:</h1>
+
+  <div class="pages">
+    <% @pages.each do |page| %>
+      <div class="page-title">
+        <h2><%= link_to(page.title, page) %></h2>
+      </div>
+    <% end %>
+  </div>
+</section>
+

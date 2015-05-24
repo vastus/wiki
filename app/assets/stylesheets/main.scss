@@ -1,4 +1,5 @@
 $width: 960px;
+$link_color: #4c9ed9;
 
 body {
   color: #333;
@@ -8,6 +9,24 @@ body {
 }
 
 header {
+  position: relative;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+}
+
+a:visited {
+  color: darken($link_color, 15%);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  color: rgb(220, 70, 70);
 }
 
 nav {
@@ -36,7 +55,9 @@ nav {
   }
 }
 
-.header-link {
+.header-link,
+.header-link:visited,
+.header-link:hover {
   color: #444;
   text-decoration: none;
   text-transform: uppercase;
@@ -52,5 +73,26 @@ nav {
   font-size: .875em;
   position: absolute;
   background: rgb(230, 245, 245);
+}
+
+#search-box {
+  top: 0;
+  right: 0;
+  position: absolute;
+
+  input {
+    color: #444;
+    width: 18em;
+    line-height: 1.5;
+    font-size: .875em;
+    padding: .3em .8em;
+    margin-bottom: 1em;
+    border-radius: 1px;
+    border: 1px solid #eee;
+
+    &:focus {
+      border-color: #ddd;
+    }
+  }
 }
 

@@ -15,6 +15,12 @@
 
     <header>
       <h1><%= link_to("Wiki", root_path, :class => "header-link") %></h1>
+
+      <div id="search-box">
+        <%= form_tag("/search", :method => "GET") do %>
+          <%= text_field_tag(:q, params[:q], :id => nil, :placeholder => "Search") %>
+        <% end %>
+      </div>
     </header>
 
     <nav>
