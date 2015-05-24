@@ -5,6 +5,15 @@ class ApplicationController < ActionController::Base
 
   helper_method(:current_user)
 
+  rescue_from CanCan::AccessDenied do
+    alert_msg = "Not authorized. Log in and try again."
+    if request.env["HTTP_REFERER"]
+      redirect_to(:back, :alert => alert_msg)
+    else
+      redirect_to(root_url, :alert => alert_msg)
+    end
+  end
+
   private
 
   def current_user
