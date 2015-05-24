@@ -2,6 +2,10 @@
 
 Simple, minimal wiki with focus on code.
 
+## Requirements
+
+  - Python 2.5, 2.6, or 2.7 (`pygments.rb`)
+
 ## Features
 
   - [x] github oauth
