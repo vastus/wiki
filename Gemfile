@@ -15,6 +15,7 @@ gem 'omniauth-github', '~> 1.1.2'
 gem 'redcarpet', '~> 3.2.2'
 gem 'pygments.rb', '~> 0.6'
 gem 'cancancan', '~> 1.10'
+gem 'friendly_id', '~> 5.1'
 
 # grp
 group :development, :test do
