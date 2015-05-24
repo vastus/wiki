@@ -1,6 +1,8 @@
+$width: 960px;
+
 body {
   color: #333;
-  width: 60em;
+  width: $width;
   margin: 1em auto;
   padding: 1em;
 }
@@ -11,7 +13,6 @@ header {
 nav {
   padding: 1em .5em;
   border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
 
   ul {
     margin: 0;
@@ -39,5 +40,17 @@ nav {
   color: #444;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+#flash {
+  top: .8em;
+  color: #444;
+  width: $width;
+  padding: .4em .8em;
+  font-weight: bold;
+  line-height: 1.5;
+  font-size: .875em;
+  position: absolute;
+  background: rgb(230, 245, 245);
 }
 
