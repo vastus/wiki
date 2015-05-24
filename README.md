@@ -12,6 +12,7 @@ Simple, minimal wiki with focus on code.
   - [x] markdown
   - [x] syntax highlighting
   - [x] abilities (cancan)
+  - [ ] search
   - [ ] preview (new/edit)
   - [ ] jwt
 
