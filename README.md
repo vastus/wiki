@@ -16,7 +16,7 @@ Set environment variables.
 
 Create database and run migrations.
 
-```ruby
+```
 rake db:create
 rake db:migrate
 ```
