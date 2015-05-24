@@ -14,6 +14,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'omniauth-github', '~> 1.1.2'
 gem 'redcarpet', '~> 3.2.2'
 gem 'pygments.rb', '~> 0.6'
+gem 'cancancan', '~> 1.10'
 
 # grp
 group :development, :test do
