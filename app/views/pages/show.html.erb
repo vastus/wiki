@@ -9,8 +9,10 @@
     </div>
   </div>
 
-  <div class="actions">
-    <%= link_to("Edit", edit_page_path(@page)) %>
-  </div>
+  <% if can?(:edit, @page) %>
+    <div class="actions">
+      <%= link_to("Edit", edit_page_path(@page)) %>
+    </div>
+  <% end %>
 </section>
 
