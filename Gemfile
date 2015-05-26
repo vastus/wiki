@@ -17,6 +17,8 @@ gem 'pygments.rb', '~> 0.6'
 gem 'cancancan', '~> 1.10'
 gem 'friendly_id', '~> 5.1'
 gem 'pg_search', '~> 1.0'
+gem 'puma', '~> 2.11'
+gem 'rack-timeout', '~> 0.2'
 
 # grp
 group :development, :test do
