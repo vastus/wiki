@@ -11,4 +11,5 @@
     - build-essential
     - libreadline-dev
     - git
+    - ack-grep
 
