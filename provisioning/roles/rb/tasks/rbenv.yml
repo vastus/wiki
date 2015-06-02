@@ -12,7 +12,7 @@
 
 - name: Copy rbenv.sh to /etc/profile.d
   remote_user: root
-  copy: src=rbenv.sh dest=/etc/profile.d/rbenv.sh
+  template: src=rbenv.sh.j2 dest=/etc/profile.d/rbenv.sh
 
 - name: Install ruby-build as a plugin
   git: repo=https://github.com/sstephenson/ruby-build.git dest="{{ rbenv_path }}/plugins/ruby-build"
