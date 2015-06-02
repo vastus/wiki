@@ -1,0 +1,19 @@
+---
+- name: Create apps dir
+  file: path=/apps state=directory
+
+- name: Create deploy user
+  user: name={{ user }} shell=/bin/bash
+
+- name: Create .ssh dir
+  file: path="{{ home_path }}/.ssh" state=directory
+
+- name: Copy public key to authorized keys
+  copy: src=/Users/juhoh/.ssh/id_rsa.pub dest="{{ home_path }}/.ssh/authorized_keys"
+
+- name: Copy rc to profile.d
+  copy: src=custom.sh dest=/etc/profile.d/custom.sh
+
+- name: Clone repo
+  git: repo={{ git_repo }} dest="{{ app_path }}" update=no
+
