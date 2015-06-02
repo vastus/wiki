@@ -1,4 +1,8 @@
 ---
+user: deploy
+home_path: /home/{{ user }}
+git_repo: https://github.com/vastus/wiki.git
+
 app_name: wiki
 app_path: /apps/{{ app_name }}
 
