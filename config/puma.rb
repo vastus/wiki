@@ -5,6 +5,8 @@ socket = "unix:///tmp/puma.wiki.sock"
 
 workers(num_procs)
 threads(num_threads, num_threads)
+pidfile("/tmp/puma.pid")
+daemonize
 
 preload_app!
 
