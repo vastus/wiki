@@ -11,4 +11,5 @@
   remote_user: "{{ user }}"
   roles:
     - rb
+    - iojs
 
