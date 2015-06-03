@@ -1,8 +1,10 @@
 ---
 - name: Create apps dir
-  file: path=/apps state=directory
+  remote_user: root
+  file: path=/apps owner={{ user }} group={{ user }} state=directory
 
 - name: Create deploy user
+  remote_user: root
   user: name={{ user }} shell=/bin/bash
 
 - name: Create .ssh dir
