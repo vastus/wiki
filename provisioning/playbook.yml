@@ -4,12 +4,11 @@
   roles:
     - common
     - nginx
-    - prep
 
-# role `rb` depends on `prep`
 - hosts: web
   remote_user: "{{ user }}"
   roles:
     - rb
     - iojs
+    - prep
 
