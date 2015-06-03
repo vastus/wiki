@@ -7,8 +7,10 @@
 - name: Download tarball
   when: iojs_exists|failed
   get_url: url=https://iojs.org/dist/latest/{{ iojs_tarball }} dest=/tmp
+  register: iojs_downloaded
 
 - name: Extract tarball
+  when: iojs_downloaded|changed
   unarchive: src=/tmp/{{ iojs_tarball }} dest=/tmp copy=no
   register: iojs_extracted
 
