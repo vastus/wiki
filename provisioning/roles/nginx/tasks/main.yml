@@ -9,6 +9,6 @@
   template: src=server.j2 dest=/etc/nginx/sites-available/{{ app_name }}
 
 - name: Link server conf from available to enabled sites
-  file: src=/etc/nginx/sites-available dest=/etc/nginx/sites-enabled/{{ app_name }} state=link
+  file: src=/etc/nginx/sites-available/{{ app_name }} dest=/etc/nginx/sites-enabled/{{ app_name }} state=link
   notify: restart nginx
 
