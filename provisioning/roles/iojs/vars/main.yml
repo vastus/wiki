@@ -1,0 +1,6 @@
+---
+iojs_version: 2.2.1
+iojs_package: iojs-v{{ iojs_version }}-linux-x64
+iojs_tarball: "{{ iojs_package }}.tar.xz"
+iojs_path: "{{ home_path }}/.iojs"
+
