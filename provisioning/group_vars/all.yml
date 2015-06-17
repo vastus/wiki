@@ -1,4 +1,6 @@
 ---
+local_home_path: "{{ lookup('env', 'HOME') }}"
+
 user: deploy
 home_path: /home/{{ user }}
 git_repo: https://github.com/vastus/wiki.git
