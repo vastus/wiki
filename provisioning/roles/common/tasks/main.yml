@@ -14,3 +14,18 @@
     - ack-grep
     - curl
 
+- name: Create deploy user
+  user: name={{ user }} shell=/bin/bash
+
+- name: Copy rc to profile.d
+  copy: src=custom.sh dest=/etc/profile.d/custom.sh
+
+- name: Create apps dir
+  file: path=/apps owner={{ user }} group={{ user }} state=directory
+
+- name: Create .ssh dir
+  file: path={{ home_path }}/.ssh owner={{ user }} group={{ user }} state=directory
+
+- name: Copy public key to authorized keys
+  copy: src={{ local_home_path }}/.ssh/id_rsa.pub dest={{ home_path }}/.ssh/authorized_keys owner={{ user }} group={{ user }}
+
