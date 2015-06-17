@@ -1,19 +1,15 @@
 ---
 - name: Clone rbenv repo
-  git: repo=https://github.com/sstephenson/rbenv.git dest="{{ rbenv_path }}"
+  git: repo=https://github.com/sstephenson/rbenv.git dest={{ rbenv_path }}
 
 - name: Link rbenv binary
   remote_user: root
   file: src={{ rbenv_path }}/bin/rbenv dest=/usr/local/bin/rbenv state=link
-
-- name: Link gem binary
-  remote_user: root
-  file: src={{ rbenv_path }}/shims/gem dest=/usr/local/bin/gem state=link
 
 - name: Copy rbenv.sh to /etc/profile.d
   remote_user: root
   template: src=rbenv.sh.j2 dest=/etc/profile.d/rbenv.sh
 
 - name: Install ruby-build as a plugin
-  git: repo=https://github.com/sstephenson/ruby-build.git dest="{{ rbenv_path }}/plugins/ruby-build"
+  git: repo=https://github.com/sstephenson/ruby-build.git dest={{ rbenv_path }}/plugins/ruby-build
 
