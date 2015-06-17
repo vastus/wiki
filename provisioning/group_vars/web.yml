@@ -1,0 +1,5 @@
+---
+server:
+  hostname: localhost
+  document_root: "{{ app_path }}/public"
+

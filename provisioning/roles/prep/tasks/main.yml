@@ -1,0 +1,4 @@
+---
+- name: Clone repo
+  git: repo={{ git_repo }} dest={{ app_path }} update=no
+

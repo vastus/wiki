@@ -1,0 +1,4 @@
+---
+ruby_version: 2.2.0
+rbenv_path: "{{ home_path }}/.rbenv"
+

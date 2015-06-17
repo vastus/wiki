@@ -1,0 +1,21 @@
+---
+- name: Install pg w/ deps
+  apt: name={{ item }} state=present
+  with_items:
+    - postgresql
+    - libpq-dev
+    - python-psycopg2
+
+- name: Create user
+  sudo_user: postgres
+  postgresql_user: name={{ pg_user }} password={{ pg_password }} role_attr_flags=CREATEDB,NOSUPERUSER
+  notify: restart postgres
+
+- name: Get version (major.minor)
+  shell: "/usr/bin/psql --version | head -1 | awk '{print $3}' | cut -d '.' -f-2"
+  register: version
+
+- name: Copy pg_hba.conf
+  copy: src=pg_hba.conf dest=/etc/postgresql/{{ version.stdout }}/main
+  notify: restart postgres
+

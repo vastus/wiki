@@ -1,0 +1,29 @@
+# https://github.com/sstephenson/ruby-build/issues/690#issuecomment-68113987
+- name: Install deps
+  remote_user: root
+  apt: pkg={{ item }} state=present
+  with_items:
+    - libffi-dev
+    - zlib1g-dev
+    - libssl-dev
+    - libpq-dev
+
+- name: Install ruby with ruby-build
+  shell: rbenv install --skip-existing {{ ruby_version }}
+
+- name: Set global ruby
+  shell: rbenv global {{ ruby_version }}
+ 
+- name: Add gemrc
+  copy: src=gemrc dest=/home/{{ user }}/.gemrc
+
+- name: Link gem binary
+  remote_user: root
+  file: src={{ rbenv_path }}/shims/gem dest=/usr/local/bin/gem state=link
+
+- name: Install bundler
+  command: bash -lc "gem install bundler"
+
+- name: Rehash rbenv
+  shell: rbenv rehash
+

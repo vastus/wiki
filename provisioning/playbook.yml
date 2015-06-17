@@ -1,0 +1,19 @@
+---
+- hosts: web
+  remote_user: root
+  roles:
+    - common
+    - nginx
+
+- hosts: web
+  remote_user: "{{ user }}"
+  roles:
+    - rb
+    - iojs
+    - prep
+
+- hosts: db
+  remote_user: root
+  roles:
+    - pg
+

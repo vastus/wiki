@@ -1,0 +1,4 @@
+---
+pg_user: "{{ app_name }}"
+pg_password: gothenburg
+
