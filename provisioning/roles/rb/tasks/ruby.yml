@@ -17,8 +17,12 @@
 - name: Add gemrc
   copy: src=gemrc dest=/home/{{ user }}/.gemrc
 
+- name: Link gem binary
+  remote_user: root
+  file: src={{ rbenv_path }}/shims/gem dest=/usr/local/bin/gem state=link
+
 - name: Install bundler
-  gem: name=bundler state=present
+  command: bash -lc "gem install bundler"
 
 - name: Rehash rbenv
   shell: rbenv rehash
