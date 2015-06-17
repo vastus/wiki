@@ -29,7 +29,7 @@ server {
 }
 
 server {
-  listen 3000;
+  listen 8080;
   server_name {{ server.hostname }};
   root {{ server.document_root }};
   client_max_body_size 4G;
