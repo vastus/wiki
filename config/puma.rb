@@ -5,13 +5,14 @@ socket = "unix:///tmp/puma.wiki.sock"
 
 workers(num_procs)
 threads(num_threads, num_threads)
+state_path("/tmp/puma.state")
 pidfile("/tmp/puma.pid")
-daemonize
 
 preload_app!
 
 rackup(DefaultRackup)
 environment(env)
+stdout_redirect("log/puma_access.log", "log/puma_error.log", true)
 bind(socket)
 
 on_worker_boot do
