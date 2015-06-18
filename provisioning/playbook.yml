@@ -10,7 +10,6 @@
   roles:
     - rb
     - iojs
-    - prep
 
 - hosts: db
   remote_user: root
