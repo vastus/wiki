@@ -12,6 +12,7 @@ set(:deploy_to, "/apps/#{fetch(:application)}")
 
 # Default value for :linked_files is []
 # set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
+set(:linked_files, fetch(:linked_files, []).push(["config/env.yml"]))
 
 # Default value for linked_dirs is []
 # set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
@@ -27,7 +28,7 @@ set(:rbenv_map_bins, %w(rake gem bundle ruby rails))
 set(:rbenv_roles, :all) # default value
 
 # puma
-set(:puma_conf, "#{current_path}/config/puma.rb")
+set(:puma_conf, nil)
 set(:puma_state, "/tmp/puma.state")
 set(:puma_pid, "/tmp/puma.pid")
 set(:puma_default_control_app, "unix:///tmp/puma.wiki.sock")
