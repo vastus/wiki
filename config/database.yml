@@ -84,3 +84,8 @@ production:
   database: wiki_production
   password: <%= ENV['WIKI_DATABASE_PASSWORD'] %>
 
+staging:
+  <<: *default
+  database: wiki_staging
+  password: <%= ENV['WIKI_DATABASE_PASSWORD'] %>
+
