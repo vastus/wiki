@@ -46,6 +46,8 @@ namespace :db do
     end
   end
 end
+before("deploy:migrate", "db:create")
+
 
 namespace :deploy do
   after :restart, :clear_cache do
