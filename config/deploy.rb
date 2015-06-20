@@ -49,7 +49,7 @@ end
 before("deploy:migrate", "db:create")
 
 namespace :files do
-  desc "Upload needed files to host"
+  desc "Upload needed files to host. Run this task when changes to local config files."
   task :upload do
     on roles(:app) do
       ["config/env.yml", "config/puma.rb"].each do |filepath|
@@ -59,7 +59,6 @@ namespace :files do
     end
   end
 end
-before("deploy:check:make_linked_dirs", "files:upload")
 
 namespace :deploy do
   after :restart, :clear_cache do
