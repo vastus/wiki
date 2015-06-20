@@ -48,6 +48,18 @@ namespace :db do
 end
 before("deploy:migrate", "db:create")
 
+namespace :files do
+  desc "Upload needed files to host"
+  task :upload do
+    on roles(:app) do
+      ["config/env.yml", "config/puma.rb"].each do |filepath|
+        execute(:mkdir, "-pv", File.join(shared_path, File.dirname(filepath)))
+        upload!(filepath, "#{shared_path}/#{filepath}")
+      end
+    end
+  end
+end
+before("deploy:check:make_linked_dirs", "files:upload")
 
 namespace :deploy do
   after :restart, :clear_cache do
