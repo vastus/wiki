@@ -21,6 +21,10 @@ gem 'puma', '~> 2.11'
 gem 'rack-timeout', '~> 0.2'
 
 # grp
+group :production do
+  gem 'rails_12factor'
+end
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
