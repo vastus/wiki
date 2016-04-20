@@ -12,6 +12,7 @@
 !/log/.keep
 /tmp
 
+.env
 .envrc
 *.swp
 env.yml
